@@ -1,5 +1,37 @@
-export const getAllData = async(arg)=>{
-    let val = await validategetAllData (arg);
+//GET ALL
+export const getAllDataReady = async () => {
+    const response = await fetch("https://6675fb47a8d2b4d072f2149f.mockapi.io/ToDoList", {
+        method: 'GET'
+    });
+    if (!response.ok) {
+        throw new Error("Network response was not ok");
+    }
+    const result = await response.json();
+    const filterready = result.filter(item => item.status === "ready");
+
+    return filterready;
+};
+
+    
+export const getAllDataOnHold= async () => {
+    const response = await fetch("https://6675fb47a8d2b4d072f2149f.mockapi.io/ToDoList", {
+        method: 'GET'
+    });
+    if (!response.ok) {
+        throw new Error("Network response was not ok");
+    }
+    const result = await response.json();
+    const filterready = result.filter(item => item.status === "On hold");
+
+    return filterready;
+};
+
+    
+
+
+//ADD
+export const AddAllData = async(arg)=>{
+    let val = await validategAddAllData (arg);
     if (val) return val;
     let config = {  
         method: 'POST',
@@ -27,7 +59,7 @@ export const DeleteTask  = async(arg)=>{
 }
 
 //VALIDACIONES
-const validategetAllData = async (act) => {
+const validategAddAllData = async (act) => {
     if (typeof act.task !== "string" || act.task === undefined) {
         return { status: 406, message: "Los datos de la tarea no están correctamente" };
     }

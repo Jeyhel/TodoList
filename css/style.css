@@ -10,6 +10,7 @@
 body{
     background: linear-gradient(to right, #5a6369, #1f3244);
     justify-content: center;
+
   
 
 }.header{
@@ -86,18 +87,27 @@ hr{
 }
 .main{
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
-
-  
+    height: 420px;
+    overflow-y: scroll;
 }
-.space {
+.space1 {
     display: flex;
     justify-content: space-between;
-    width: 400px;
-    gap:20px;
+    flex-direction: column;
+    gap: 20px;
+ 
    
+    
+}
+.space2 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap:20px;
+
+     
 }
 .Search__bar2{
     background: rgba(0, 0, 0, 0.993) ;
@@ -139,5 +149,6 @@ hr{
     align-items: center;
     width: 100%;
     height: 45px;
+  
     
 }
