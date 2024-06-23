@@ -14,6 +14,7 @@ export const Tasknormal = async (OnHold)=>{
 return plantilla;
 
 };
+
 export const TaskTachada = async (ready) =>{
     let plantilla = "";
 
@@ -28,11 +29,26 @@ export const TaskTachada = async (ready) =>{
     </div>
     </article>`;
 
+    return plantilla;
 }
-return plantilla;
 
 };
-    
 
+
+export const TaskSinB = (OnHold)=>{
+    let plantilla = "";
+
+         plantilla += /*html*/`
+    <article class ="Search__bar2">
+    <p>${OnHold}</p>
+    <div class="check">
+        <img src="storage/img/check.webp">
+        <img src="storage/img/trash.webp">
+    </div>
+    </article>`;
+
+
+return plantilla;
+};
 
 

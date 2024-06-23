@@ -1,10 +1,11 @@
 import { getAllDataReady, getAllDataOnHold, AddAllData} from "./module/crud.js"
-import {Tasknormal, TaskTachada} from "./components/tasks.js"
+import {Tasknormal, TaskTachada, TaskSinB} from "./components/tasks.js"
 
 
 
 let space__index1 = document.querySelector(".space1");
 let space__index2 = document.querySelector(".space2");
+let Search__bar = document.querySelector("#Search__bar");
 
 
     addEventListener("DOMContentLoaded", async() => {
@@ -12,16 +13,16 @@ let space__index2 = document.querySelector(".space2");
         space__index1.innerHTML = await Tasknormal(OnHold);
         let ready  = await getAllDataOnHold();
         space__index2.innerHTML = await TaskTachada(ready);
+        
+        
+        Search__bar.addEventListener("change", (e) =>{
+            let text = e.target.value
+            Search__bar.value = null
+            let search = TaskSinB(text)
+            space__index1.innerHTML += search;
+            let act = {};
+            act.task = text
+            act.status = "On hold";
+            let resultado = AddAllData(act);
+        }); 
     });
-
-
-
-// const AddTarea = async () => {
-    //     let act = {};
-    //     act.task = prompt("Ingrese la tarea:");
-    //     act.status = "On Hold";
-    //     let resultado = await AddAllData(act);
-    //     console.log(resultado);
-    // };
-    
-    // AddTarea();
