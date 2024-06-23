@@ -5,14 +5,17 @@ import {Tasknormal, TaskTachada, TaskSinB} from "./components/tasks.js"
 
 let space__index1 = document.querySelector(".space1");
 let space__index2 = document.querySelector(".space2");
+
 let Search__bar = document.querySelector("#Search__bar");
 
 
     addEventListener("DOMContentLoaded", async() => {
-        let OnHold  = await getAllDataReady();
+        let OnHold  = await getAllDataOnHold();
         space__index1.innerHTML = await Tasknormal(OnHold);
-        let ready  = await getAllDataOnHold();
+        let ready  = await getAllDataReady();
         space__index2.innerHTML = await TaskTachada(ready);
+        
+    }); 
         
         
         Search__bar.addEventListener("change", (e) =>{
@@ -23,6 +26,5 @@ let Search__bar = document.querySelector("#Search__bar");
             let act = {};
             act.task = text
             act.status = "On hold";
-            let resultado = AddAllData(act);
-        }); 
+      
     });

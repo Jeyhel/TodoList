@@ -35,12 +35,12 @@ export const TaskTachada = async (ready) =>{
 };
 
 
-export const TaskSinB = (OnHold)=>{
+export const TaskSinB = (hold)=>{
     let plantilla = "";
 
          plantilla += /*html*/`
     <article class ="Search__bar2">
-    <p>${OnHold}</p>
+    <p>${hold}</p>
     <div class="check">
         <img src="storage/img/check.webp">
         <img src="storage/img/trash.webp">
