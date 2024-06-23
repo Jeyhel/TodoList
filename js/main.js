@@ -26,5 +26,6 @@ let Search__bar = document.querySelector("#Search__bar");
             let act = {};
             act.task = text
             act.status = "On hold";
+            AddAllData (act);
       
     });
