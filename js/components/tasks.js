@@ -29,9 +29,9 @@ export const TaskTachada = async (ready) =>{
     </div>
     </article>`;
 
-    return plantilla;
+   
 }
-
+return plantilla;
 };
 
 
