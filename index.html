@@ -23,26 +23,7 @@
             </div>
 
             <div class="fecha">
-                <div id="datetime"></div>
-                <script>
-                    function updateDateTime() {
-                    const now = new Date();
-                    const date = now.toLocaleDateString('es-ES', {
-                        year: 'numeric', 
-                        month: '2-digit', 
-                        day: '2-digit'
-                    });
-                    const time = now.toLocaleTimeString('es-ES', {
-                        hour: '2-digit', 
-                        minute: '2-digit', 
-                        second: '2-digit'
-                    });
-                    document.getElementById('datetime').innerText = `${date} ${time}`;
-                }
-        
-                setInterval(updateDateTime, 1000);
-                updateDateTime();
-                </script>
+                <p id="time"></p>
             </div>
           
         </section>
@@ -53,8 +34,8 @@
                     <!-- <article class ="Search__bar2">
                         <p>Exam JavaScript</p>
                         <div class="check">
-                            <img src="storage/img/check.webp">
-                            <img src="storage/img/trash.webp">
+                            <img class="check" src="storage/img/check.webp" alt="check" data-id="1">
+                            <img class="trash" src="storage/img/trash.webp" alt="trash" data-id="1">
                         </div>
                     </article> -->
                 </section>
@@ -63,8 +44,8 @@
                     <!-- <article class ="Search__bar3">
                     <del>Project JavaScript</del> 
                         <div class="check">
-                            <img src="storage/img/check.webp">
-                            <img src="storage/img/trash.webp">
+                            <img class="check" src="storage/img/check.webp" alt="check" data-id="1">
+                            <img class="trash" src="storage/img/trash.webp" alt="trash" data-id="1">
                         </div>
                     </article> -->
                 </section>

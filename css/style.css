@@ -56,8 +56,8 @@ body{
     height: 43px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    margin-top: -82px;
-    margin-left: 450px;
+    margin-top: -78px;
+    margin-left: 399px;
  
     
 }
@@ -79,9 +79,10 @@ hr{
     color: aliceblue;
 }
 
-#time p{
-    font-size: 50px;
-    color: black;
+#time {
+    margin-top: 20px;
+    font-size: 15px;
+    color: rgb(237, 232, 232);
     text-align: center;
 
 }

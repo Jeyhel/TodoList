@@ -46,17 +46,6 @@ export const AddAllData = async(arg)=>{
 }
 
 
-export const DeleteTask  = async(arg)=>{
-    let val = await validateDeleteTask (arg);
-    if (val) return val;
-    let config = {  
-        method: 'DELETE',
-        body : JSON.stringify(arg)
-    }
-    let res = await fetch ("https://6675fb47a8d2b4d072f2149f.mockapi.io/ToDoList", config);
-    let data = res.json();
-    return data;
-}
 
 //VALIDACIONES
 const validategAddAllData = async (act) => {
@@ -65,8 +54,39 @@ const validategAddAllData = async (act) => {
     }
 };
 
-const validateDeleteTask = async ({ id }) => {
-    if (typeof id !== "string" || id === undefined) {
-        return { status: 406, message: "El ID de la tarea no está llegando correctamente" };
+
+
+// PUT
+export const changeStatusToReady = async (id, status) => {
+    const url = `https://6675fb47a8d2b4d072f2149f.mockapi.io/ToDoList/${id}`;
+    const options = {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ status }),
+    };
+
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error changing status to ready:", error);
     }
 };
+
+
+// DELETE
+export const deleteTaskReady = async(id) => {
+    const url = `https://6675fb47a8d2b4d072f2149f.mockapi.io/ToDoList/${id}`;
+    const options = { 
+        method: "DELETE",
+        headers: {"content-type": "application/json"},
+    };
+
+    let res = await fetch(url, options);
+    let data = await res.json();
+    return data;
+}
