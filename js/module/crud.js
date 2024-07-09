@@ -1,6 +1,6 @@
 //GET ALL
 export const getAllDataReady = async () => {
-    const response = await fetch("https://6675fb47a8d2b4d072f2149f.mockapi.io/ToDoList", {
+    const response = await fetch(`https://6674179975872d0e0a950e53.mockapi.io/todoList`, {
         method: 'GET'
     });
     if (!response.ok) {
@@ -14,7 +14,7 @@ export const getAllDataReady = async () => {
 
     
 export const getAllDataOnHold= async () => {
-    const response = await fetch("https://6675fb47a8d2b4d072f2149f.mockapi.io/ToDoList", {
+    const response = await fetch(`https://6674179975872d0e0a950e53.mockapi.io/todoList`, {
         method: 'GET'
     });
     if (!response.ok) {
@@ -40,7 +40,7 @@ export const AddAllData = async(arg)=>{
 
    }
    
-    let res = await fetch ("https://6675fb47a8d2b4d072f2149f.mockapi.io/ToDoList", config);
+    let res = await fetch (`https://6674179975872d0e0a950e53.mockapi.io/todoList`, config);
     let data = res.json();
     return data;
 }
@@ -58,7 +58,7 @@ const validategAddAllData = async (act) => {
 
 // PUT
 export const changeStatusToReady = async (id, status) => {
-    const url = `https://6675fb47a8d2b4d072f2149f.mockapi.io/ToDoList/${id}`;
+    const url = `https://6674179975872d0e0a950e53.mockapi.io/todoList/${id}`;
     const options = {
         method: "PUT",
         headers: { "content-type": "application/json" },
@@ -80,7 +80,7 @@ export const changeStatusToReady = async (id, status) => {
 
 // DELETE
 export const deleteTaskReady = async(id) => {
-    const url = `https://6675fb47a8d2b4d072f2149f.mockapi.io/ToDoList/${id}`;
+    const url = `https://6674179975872d0e0a950e53.mockapi.io/todoList/${id}`;
     const options = { 
         method: "DELETE",
         headers: {"content-type": "application/json"},
